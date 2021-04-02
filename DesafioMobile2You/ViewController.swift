@@ -9,29 +9,31 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var movie: Movie!
-    private var similarMovies: SimilarMovies!
-    private let id = 550
+    // MARK: - Properties
+    private var movie: Movie?
+    private var similarMovies: SimilarMovies?
+    private let id = 150
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var aiLoading: UIActivityIndicatorView!
 
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        aiLoading.startAnimating()
         loadMovie()
-        
+                
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
             if let vc = UIStoryboard(name: "Movie", bundle: nil).instantiateViewController(withIdentifier: "Movie") as? MovieTableViewController {
-                vc.movie = self.movie
-                vc.similarMovies = self.similarMovies
+                vc.movie = self.movie!
+                vc.similarMovies = self.similarMovies!
                 self.present(vc, animated: true, completion: nil)
             }
+            self.aiLoading.stopAnimating()
         }
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! MovieTableViewController
-        vc.movie = movie
-    }
-
     func loadMovie() {
         TheMovieDBAPI.getMovie(self.id) { (res) in
             self.movie = res
