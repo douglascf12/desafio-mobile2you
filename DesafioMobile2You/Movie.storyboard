@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie Table View Controller-->
+        <scene sceneID="HJz-R8-TrW">
+            <objects>
+                <tableViewController storyboardIdentifier="Movie" modalPresentationStyle="fullScreen" id="gRf-lF-rvv" customClass="MovieTableViewController" customModule="DesafioMobile2You" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eP3-Kc-TAm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="9pI-PI-6Pu">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="501"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Zcd-HH-UW7">
+                            <rect key="frame" x="0.0" y="637" width="414" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="roY-tq-S8u" customClass="MoviesTableViewCell" customModule="DesafioMobile2You" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="529" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="roY-tq-S8u" id="FWM-z0-JHF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-Jx-5l2">
+                                            <rect key="frame" x="10" y="10" width="41" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="41" id="C2J-Vy-H3t"/>
+                                                <constraint firstAttribute="height" constant="60" id="Lz9-3q-FnR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Xlv-Jx-5l2" firstAttribute="leading" secondItem="FWM-z0-JHF" secondAttribute="leading" constant="10" id="GJ7-wP-ouY"/>
+                                        <constraint firstItem="Xlv-Jx-5l2" firstAttribute="top" secondItem="FWM-z0-JHF" secondAttribute="top" constant="10" id="enM-9k-hqp"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xlv-Jx-5l2" secondAttribute="bottom" constant="10" id="waK-sM-jdy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ivSimilarMovie" destination="Xlv-Jx-5l2" id="rs0-qP-Uch"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gRf-lF-rvv" id="oo3-Kw-jVj"/>
+                            <outlet property="delegate" destination="gRf-lF-rvv" id="vd6-Y0-cRG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="En4-30-1YW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7z3-cO-pHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.14492753623199" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
