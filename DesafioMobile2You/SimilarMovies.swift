@@ -8,6 +8,5 @@
 import Foundation
 
 struct SimilarMovies: Codable {
-    let results: [Movie]
-    let total_results: Int
+    var results: [Movie]
 }

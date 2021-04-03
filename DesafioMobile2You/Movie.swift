@@ -10,7 +10,7 @@ import Foundation
 struct Movie: Codable {
     let backdrop_path: String
     let id: Int
-    let original_title: String
+    let title: String
     let release_date: String
     let popularity: Double
     let vote_count: Int

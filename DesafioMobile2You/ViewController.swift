@@ -12,10 +12,11 @@ class ViewController: UIViewController {
     // MARK: - Properties
     private var movie: Movie?
     private var similarMovies: SimilarMovies?
-    private let id = 150
+    private let id = 550
     
     // MARK: - IBOutlets
     @IBOutlet weak var aiLoading: UIActivityIndicatorView!
+    @IBOutlet weak var label: UILabel!
 
     // MARK: - Functions
     override func viewDidLoad() {
@@ -29,7 +30,6 @@ class ViewController: UIViewController {
                 vc.similarMovies = self.similarMovies!
                 self.present(vc, animated: true, completion: nil)
             }
-            self.aiLoading.stopAnimating()
         }
         
     }

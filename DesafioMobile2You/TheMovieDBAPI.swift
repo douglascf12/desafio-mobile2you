@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BusError {
+enum MovieError {
     case url
     case taskError(error: Error)
     case noResponse
@@ -53,7 +53,7 @@ class TheMovieDBAPI {
         dataTask.resume()
     }
 
-    class func getMovie(_ id: Int, onComplete: @escaping (Movie) -> Void, onError: @escaping (BusError) -> Void) {
+    class func getMovie(_ id: Int, onComplete: @escaping (Movie) -> Void, onError: @escaping (MovieError) -> Void) {
         guard let url = URL(string: "\(basePath)movie/\(id)?api_key=\(key)") else {
             onError(.url)
             return
@@ -84,7 +84,7 @@ class TheMovieDBAPI {
         dataTask.resume()
     }
     
-    class func getSimilarMovies(_ id: Int, onComplete: @escaping (SimilarMovies) -> Void, onError: @escaping (BusError) -> Void) {
+    class func getSimilarMovies(_ id: Int, onComplete: @escaping (SimilarMovies) -> Void, onError: @escaping (MovieError) -> Void) {
         guard let url = URL(string: "\(basePath)movie/\(id)/similar?api_key=\(key)") else {
             onError(.url)
             return

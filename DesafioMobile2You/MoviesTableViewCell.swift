@@ -19,21 +19,18 @@ class MoviesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func prepare(with movie: Movie) {
         let url = URL(string: "https://image.tmdb.org/t/p/w500\(movie.backdrop_path)")
         let data = try? Data(contentsOf: url!)
         ivSimilarMovie.image = UIImage(data: data!)
-        //lbTitleSimilarMovie.text = movie.original_title
-        //lbGenreSimilarMovie.text = movie.release_date
+        lbTitleSimilarMovie.text = movie.title
+        lbGenreSimilarMovie.text = "Ano de lançamento: \(movie.release_date.prefix(4))"
     }
 
 }
