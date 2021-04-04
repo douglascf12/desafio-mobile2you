@@ -10,8 +10,7 @@ import UIKit
 class MovieTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var movie: Movie!
-    var similarMovies: SimilarMovies!
+    let movieManager = MovieManager.shared
     var like = false
     
     // MARK: - IBOutlets
@@ -25,10 +24,10 @@ class MovieTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ivMovie.image = loadImage(path: movie.backdrop_path)
-        lbMoviteTitle.text = movie.title
-        lbLikesMovie.text = "\(movie.vote_count)"
-        lbPopularityMovie.text = "\(movie.popularity)"
+        ivMovie.image = movieManager.downloadImage(path: movieManager.movie.backdrop_path)
+        lbMoviteTitle.text = movieManager.movie.title
+        lbLikesMovie.text = "\(movieManager.movie.vote_count)"
+        lbPopularityMovie.text = "\(movieManager.movie.popularity)"
     }
     
     func loadImage(path: String) -> UIImage {
@@ -39,7 +38,7 @@ class MovieTableViewController: UITableViewController {
     
     // MARK: - IBActions
     @IBAction func likeMovie(_ sender: Any) {
-        let countLikes = movie.vote_count
+        let countLikes = movieManager.movie.vote_count
         if !like {
             btLikeMovie.setImage(UIImage(named: "likeOn"), for: .normal)
             lbLikesMovie.text = "\(countLikes+1)"
@@ -53,14 +52,15 @@ class MovieTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return similarMovies.results.count
+        return movieManager.similarMovies.results.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MoviesTableViewCell
 
-        let similarMovie = similarMovies.results[indexPath.row]
-        cell.prepare(with: similarMovie)
+        let similarMovie = movieManager.similarMovies.results[indexPath.row]
+        let image = movieManager.downloadImage(path: movieManager.similarMovies.results[indexPath.row].backdrop_path)
+        cell.prepare(similarMovie, image)
 
         return cell
     }

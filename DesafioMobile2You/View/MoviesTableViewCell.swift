@@ -25,10 +25,8 @@ class MoviesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func prepare(with movie: Movie) {
-        let url = URL(string: "https://image.tmdb.org/t/p/w500\(movie.backdrop_path)")
-        let data = try? Data(contentsOf: url!)
-        ivSimilarMovie.image = UIImage(data: data!)
+    func prepare(_ movie: Movie, _ image: UIImage) {
+        ivSimilarMovie.image = image
         lbTitleSimilarMovie.text = movie.title
         lbGenreSimilarMovie.text = "Ano de lançamento: \(movie.release_date.prefix(4))"
     }
