@@ -22,6 +22,7 @@
 		A3AEF87126169C5B00FFC028 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AEF87026169C5B00FFC028 /* MovieTableViewController.swift */; };
 		A3AEF8742616A96C00FFC028 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AEF8732616A96C00FFC028 /* Movie.storyboard */; };
 		A3B995C9261E15A600DEE364 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B995C8261E15A600DEE364 /* AppCoordinator.swift */; };
+		A3B995CC261E1AFC00DEE364 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B995CB261E1AFC00DEE364 /* MovieService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		A3AEF87026169C5B00FFC028 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		A3AEF8732616A96C00FFC028 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		A3B995C8261E15A600DEE364 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A3B995CB261E1AFC00DEE364 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		C7DB93F617779A12180D16B3 /* Pods-DesafioMobile2You.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioMobile2You.release.xcconfig"; path = "Target Support Files/Pods-DesafioMobile2You/Pods-DesafioMobile2You.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				A3AEF85D2616521700FFC028 /* Movie.swift */,
+				A3B995CB261E1AFC00DEE364 /* MovieService.swift */,
 				A313F699261A28AC00F01787 /* MovieManager.swift */,
 				A3AEF860261679D700FFC028 /* SimilarMovies.swift */,
 				A3AEF85A261650D800FFC028 /* TheMovieDBAPI.swift */,
@@ -264,6 +267,7 @@
 				A3AEF8662616868700FFC028 /* MoviesTableViewCell.swift in Sources */,
 				A313F69A261A28AC00F01787 /* MovieManager.swift in Sources */,
 				A3AEF85E2616521700FFC028 /* Movie.swift in Sources */,
+				A3B995CC261E1AFC00DEE364 /* MovieService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
