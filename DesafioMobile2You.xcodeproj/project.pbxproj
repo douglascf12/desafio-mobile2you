@@ -18,7 +18,7 @@
 		A3AEF861261679D700FFC028 /* SimilarMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AEF860261679D700FFC028 /* SimilarMovies.swift */; };
 		A3AEF8662616868700FFC028 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AEF8652616868700FFC028 /* MoviesTableViewCell.swift */; };
 		A3B995D0261E538200DEE364 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B995CF261E538200DEE364 /* MovieRepository.swift */; };
-		A3F44D0D261E598A004B8B74 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F44D0C261E598A004B8B74 /* MovieService.swift */; };
+		A3BCBDB6261F98B1002EBD7A /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCBDB5261F98B1002EBD7A /* MovieService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		A3AEF860261679D700FFC028 /* SimilarMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMovies.swift; sourceTree = "<group>"; };
 		A3AEF8652616868700FFC028 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		A3B995CF261E538200DEE364 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
-		A3F44D0C261E598A004B8B74 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieService.swift; path = ../MovieService.swift; sourceTree = "<group>"; };
+		A3BCBDB5261F98B1002EBD7A /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		C7DB93F617779A12180D16B3 /* Pods-DesafioMobile2You.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioMobile2You.release.xcconfig"; path = "Target Support Files/Pods-DesafioMobile2You/Pods-DesafioMobile2You.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,7 @@
 			children = (
 				A3AEF85D2616521700FFC028 /* Movie.swift */,
 				A3AEF860261679D700FFC028 /* SimilarMovies.swift */,
-				A3F44D0C261E598A004B8B74 /* MovieService.swift */,
+				A3BCBDB5261F98B1002EBD7A /* MovieService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 				A3AEF84926164ED900FFC028 /* ViewController.swift in Sources */,
 				A3AEF84526164ED900FFC028 /* AppDelegate.swift in Sources */,
 				A3B995D0261E538200DEE364 /* MovieRepository.swift in Sources */,
-				A3F44D0D261E598A004B8B74 /* MovieService.swift in Sources */,
 				A3AEF84726164ED900FFC028 /* SceneDelegate.swift in Sources */,
 				A3AEF8662616868700FFC028 /* MoviesTableViewCell.swift in Sources */,
+				A3BCBDB6261F98B1002EBD7A /* MovieService.swift in Sources */,
 				A3AEF85E2616521700FFC028 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
