@@ -10,4 +10,16 @@ import RxSwift
 
 class MovieService {
     
+//    func fetchMovie() -> Observable<Movie> {
+//        
+//        return Observable.create { observer -> Disposable in
+//            
+//            guard let path
+//            
+//            
+//            
+//        }
+//        
+//    }
+    
 }

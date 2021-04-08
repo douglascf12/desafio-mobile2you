@@ -60,7 +60,7 @@ class MovieTableViewController: UITableViewController {
 
         let similarMovie = movieManager.similarMovies.results[indexPath.row]
         let image = movieManager.downloadImage(path: movieManager.similarMovies.results[indexPath.row].backdrop_path)
-        cell.prepare(similarMovie, image)
+        //cell.prepare(similarMovie, image)
 
         return cell
     }

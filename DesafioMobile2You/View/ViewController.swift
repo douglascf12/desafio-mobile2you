@@ -6,52 +6,80 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
     
-    static func instantiate() -> ViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let viewController = storyboard.instantiateInitialViewController() as! ViewController
-        return viewController
-    }
+    // MARK: - IBOutlets
+    @IBOutlet weak var lbLoading: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var ivMovie: UIImageView!
+    @IBOutlet weak var lbMovieTitle: UILabel!
+    @IBOutlet weak var btMovieLike: UIButton!
+    @IBOutlet weak var lbMovieLikes: UILabel!
+    @IBOutlet weak var lbPopularity: UILabel!
     
-//    // MARK: - Properties
-//    private let id = 550
-//    let movieManager = MovieManager.shared
-//
-//    // MARK: - IBOutlets
-//    @IBOutlet weak var aiLoading: UIActivityIndicatorView!
-//    @IBOutlet weak var label: UILabel!
+    //MARK: - Properties
+    private let movieRepository = MovieRepository()
+    private let disposeBag = DisposeBag()
+    private var movie: Movie!
+    private var like = false
 
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lbLoading.text = "Carregando informações do filme..."
         
-        
-        
-//        aiLoading.startAnimating()
-//        loadMovie()
-//
-//        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
-//            if let vc = UIStoryboard(name: "Movie", bundle: nil).instantiateViewController(withIdentifier: "Movie") as? MovieTableViewController {
-//                self.present(vc, animated: true, completion: nil)
-//            }
-//        }
-        
+        tableView.isHidden = true
+        loadInfos()
+        let movieObservable = movieRepository.getSimilarMovies().share()
+        movieObservable.flatMap { movies -> Observable<[Movie]> in
+            return self.movieRepository.getSimilarMovies()
+        }.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: MoviesTableViewCell.self)) { index, movie, cell in
+            cell.ivSimilarMovie.image = self.movieRepository.downloadImage(path: movie.backdrop_path)
+            cell.lbTitleSimilarMovie.text = movie.title
+            cell.lbReleaseYear.text = "Ano de lançamento: \(movie.release_date.prefix(4))"
+        }.disposed(by: disposeBag)
     }
     
-//    func loadMovie() {
-//        TheMovieDBAPI.getMovie(self.id) { (res) in
-//            self.movieManager.movie = res
-//        } onError: { (error) in
-//            print(error)
-//        }
-//        TheMovieDBAPI.getSimilarMovies(self.id) { (res) in
-//            self.movieManager.similarMovies = res
-//        } onError: { (error) in
-//            print(error)
-//        }
-//    }
+    // método que faz a requisição do filme e seta as informações na tela
+    func loadInfos() {
+        let movieService = MovieService()
+        let idMovie = movieRepository.idMovie
+        let urlString = "https://api.themoviedb.org/3/movie/\(idMovie)?api_key=898283e2986d30a77df7ff2d9100de5c"
+        
+        movieService.getMovie(from: urlString) { movie in
+            self.movie = movie
+        } onError: { error in
+            print(error)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+            self.ivMovie.image = self.movieRepository.downloadImage(path: self.movie.backdrop_path)
+            self.lbMovieTitle.text = self.movie.title
+            self.lbMovieLikes.text = "\(self.movie.vote_count)"
+            self.lbPopularity.text = "\(self.movie.popularity)"
+            self.lbLoading.isHidden = true
+            self.tableView.isHidden = false
+        }
+    }
     
+    // MARK: - IBActions
+    // função que muda a imagem do botão ao ser clicado
+    @IBAction func likeMovie(_ sender: Any) {
+        let countLikes = movie.vote_count
+        if !like {
+            btMovieLike.setImage(UIImage(named: "likeOn"), for: .normal)
+            lbMovieLikes.text = "\(countLikes+1)"
+            like = true
+        } else {
+            btMovieLike.setImage(UIImage(named: "likeOff"), for: .normal)
+            lbMovieLikes.text = "\(countLikes)"
+            like = false
+        }
+    }
+
 }
+

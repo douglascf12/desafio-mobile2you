@@ -68,17 +68,21 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="BbJ-XS-Pdh" firstAttribute="centerY" secondItem="1fn-Pw-au7" secondAttribute="centerY" id="3t3-tx-idP"/>
+                                <constraint firstItem="1fn-Pw-au7" firstAttribute="leading" secondItem="9pI-PI-6Pu" secondAttribute="leading" constant="10" id="69P-cg-qgn"/>
                                 <constraint firstAttribute="trailing" secondItem="gci-Jj-uQI" secondAttribute="trailing" constant="10" id="855-rh-hOD"/>
                                 <constraint firstItem="rMh-C8-7YT" firstAttribute="centerY" secondItem="FIJ-wp-4BW" secondAttribute="centerY" id="LgC-ZZ-mWm"/>
                                 <constraint firstAttribute="bottom" secondItem="1fn-Pw-au7" secondAttribute="bottom" constant="8" id="Lu7-bD-eNi"/>
                                 <constraint firstItem="sx6-TO-t8J" firstAttribute="leading" secondItem="9pI-PI-6Pu" secondAttribute="leading" id="Osc-4G-YLR"/>
                                 <constraint firstItem="BbJ-XS-Pdh" firstAttribute="leading" secondItem="1fn-Pw-au7" secondAttribute="trailing" constant="8" id="PB7-Sw-sG7"/>
                                 <constraint firstItem="FIJ-wp-4BW" firstAttribute="leading" secondItem="BbJ-XS-Pdh" secondAttribute="trailing" constant="30" id="PnK-SE-hdJ"/>
+                                <constraint firstItem="BbJ-XS-Pdh" firstAttribute="leading" secondItem="1fn-Pw-au7" secondAttribute="trailing" constant="8" id="VRI-Wi-7PQ"/>
                                 <constraint firstItem="1fn-Pw-au7" firstAttribute="leading" secondItem="9pI-PI-6Pu" secondAttribute="leading" constant="10" id="Ws1-KW-raC"/>
                                 <constraint firstItem="gci-Jj-uQI" firstAttribute="top" secondItem="sx6-TO-t8J" secondAttribute="bottom" constant="8" id="XXh-An-sAO"/>
                                 <constraint firstItem="sx6-TO-t8J" firstAttribute="top" secondItem="9pI-PI-6Pu" secondAttribute="top" id="ZQK-XB-SFc"/>
                                 <constraint firstItem="gci-Jj-uQI" firstAttribute="leading" secondItem="9pI-PI-6Pu" secondAttribute="leading" constant="10" id="b2N-o6-JtY"/>
                                 <constraint firstItem="1fn-Pw-au7" firstAttribute="top" secondItem="gci-Jj-uQI" secondAttribute="bottom" constant="8" id="bPD-K3-iZC"/>
+                                <constraint firstAttribute="bottom" secondItem="1fn-Pw-au7" secondAttribute="bottom" constant="8" id="eRj-A6-xS0"/>
+                                <constraint firstItem="1fn-Pw-au7" firstAttribute="top" secondItem="gci-Jj-uQI" secondAttribute="bottom" constant="8" id="jz7-kq-Yhe"/>
                                 <constraint firstItem="rMh-C8-7YT" firstAttribute="leading" secondItem="FIJ-wp-4BW" secondAttribute="trailing" constant="8" id="k7B-zR-Ys2"/>
                                 <constraint firstItem="FIJ-wp-4BW" firstAttribute="centerY" secondItem="BbJ-XS-Pdh" secondAttribute="centerY" id="yDJ-cJ-2H6"/>
                                 <constraint firstAttribute="trailing" secondItem="sx6-TO-t8J" secondAttribute="trailing" id="z6b-Y6-ioD"/>
@@ -91,7 +95,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="roY-tq-S8u" customClass="MoviesTableViewCell" customModule="DesafioMobile2You" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="roY-tq-S8u">
                                 <rect key="frame" x="0.0" y="543" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="roY-tq-S8u" id="FWM-z0-JHF">
